@@ -7,7 +7,6 @@ def func(i,j,way,n,m,space,score):
         answer.add(score)
         return
         
-    
     if way != 1 and j>0:
         func(i+1,j-1,1, n,m,space,score)
     if way != 2:
@@ -15,8 +14,6 @@ def func(i,j,way,n,m,space,score):
     if way != 3 and j<m-1:
         func(i+1,j+1,3,n,m,space,score)
     
-            
-
 def solution(n,m,space):
     for i in range(m):
         if i!=0:
@@ -24,12 +21,9 @@ def solution(n,m,space):
         func(0,i,2,n,m,space,0)
         if i!= m-1:
             func(0,i,3,n,m,space,0)
-        
-    print(min(answer))
+    return(min(answer))
+    
 n,m = map(int,input().split())
-
 space = [list(map(int,input().split())) for _ in range(n)]
-# print(space)
-solution(n,m,space)
-# print(solution(n,m,space))
+print(solution(n,m,space))
         
