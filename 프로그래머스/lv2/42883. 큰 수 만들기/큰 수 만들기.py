@@ -1,7 +1,3 @@
-'''
-1924 , 3
-
-'''
 def solution(number, k):
     number = list(number)
     stack = []
