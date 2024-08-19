@@ -4,18 +4,12 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
-visit = [False for _ in range(n + 1)]
-visit [0] = True
-
-def dfs(result, visit, k):
+def dfs(result, k):
     if len(result) == m:
         print(*result)
         return
     
-    for i in range(k, n+1):
-        if visit[i] == False:
-            visit[i] = True
-            dfs(result + [i], visit, i)
-            visit[i] = False
+    for i in range(k+1, n+1):
+        dfs(result + [i], i)
 
-dfs([], visit, 1)
+dfs([], 0)
