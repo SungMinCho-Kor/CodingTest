@@ -11,9 +11,10 @@ for _ in range(P):
     for i in range(20):
         student = students[i]
         k = len(row)
-        for j in range(len(row) - 1, -1, -1):
+        for j in range(len(row)):
             if row[j] > student:
                 k = j
+                break
         answer += len(row) - k
         row.insert(k, student)
     print(T, answer)
